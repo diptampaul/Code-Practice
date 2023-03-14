@@ -1,6 +1,9 @@
 # cook your dish here
 T = int(input())
-for tc in range(T):
+for i in range(T):
     (n,k) = map(int,input().split())
-    l = list(map(int,input().split()))
+    if n+k > 6:
+        print("YES")
+    else:
+        print("NO")
     
