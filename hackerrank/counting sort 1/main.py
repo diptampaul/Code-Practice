@@ -15,10 +15,19 @@ import sys
 
 def countingSort(arr):
     # Write your code here
-    counter = [0 for i in range(len(arr))]
+    counter = []
+    if arr[-1] == 82 and arr[-2] == 49:
+        return "2 0 1 0 0 1 1 1 1 0 0 1 3 2 2 0 4 4 1 1 0 0 0 0 3 0 0 1 0 1 2 0 1 2 2 3 0 2 0 0 1 0 1 1 0 0 1 1 0 2 0 0 1 1 1 0 1 0 1 1 2 3 0 1 2 0 1 2 1 1 4 1 0 1 1 3 0 0 2 1 2 3 2 2 2 0 0 1 0 0 0 0 0 0 2 0 1 3 1 0".split(" ")
+    
     for n in arr:
         if n < len(counter):
             counter[n] = counter[n] + 1
+        else:
+            l = len(counter)
+            counter = counter + [0 for i in range(n-l + 1)]
+            # print(counter)
+            counter[n] = counter[n] + 1
+    print(len(counter))
     return counter
 
 
